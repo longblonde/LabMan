@@ -1,0 +1,21 @@
+def cardswipe():
+    
+    print "Please Swipe Card"
+    while True:
+        carddata = raw_input()
+
+        if "E?" in carddata:
+            print "Error Reading Card"
+            
+        else:
+            if "+" in carddata:
+                pluspos = carddata.find('+')
+                endmark = carddata.find('?',pluspos)
+                studentid = carddata[pluspos+1:endmark]
+                return int(studentid)        
+            
+            else:
+                print "Not a valid ID"
+
+print cardswipe()
+print cardswipe()*2
